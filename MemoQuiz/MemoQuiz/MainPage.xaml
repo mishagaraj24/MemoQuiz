@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoQuiz.MainPage">
+
+
+
+    <ContentPage.Content>
+        <CollectionView x:Name="blobCollectionView"                        
+                        SelectionChanged="blobCollectionView_SelectionChanged"
+                        SelectionMode="Single" 
+                        >
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+            <CollectionView.EmptyView>
+                <StackLayout>
+                    <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                           Text="No blogs yet"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Remove" Clicked="ToolbarItem_Clicked_Remove"/>
+
+    </ContentPage.ToolbarItems>
+
+
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoQuiz.QuizPage">
+    <StackLayout>
+        <Label Text="Слово" FontSize="50" />
+        <Label x:Name="term" Text="{Binding Key}" FontSize="50" TextColor="Green" HorizontalOptions="Center"/>
+
+        <Label x:Name="translationLabel" Text="Перевод" FontSize="50" />
+        <Label x:Name="definition" Text="{Binding Value}" FontSize="50" TextColor="Green"  HorizontalOptions="Center"/>
+
+        <Label x:Name="wordCount"  Text="{Binding wordCount}" FontSize="50" />
+
+        <Label x:Name="wordsLeft"  Text="{Binding wordsLeft}" FontSize="50" />
+        <StackLayout Orientation="Horizontal">
+
+            <Button Text="Показать перевод"   Clicked= "ShowWord" />
+            <Button Text="Знаю"   Clicked="Button_Clicked" />
+            <Button Text="Следующее слово" Clicked="NextWord" />
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
